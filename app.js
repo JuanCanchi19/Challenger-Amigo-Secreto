@@ -31,3 +31,16 @@ function agregarAmigo() {
   console.log('Amigos:', amigos);
 }
 
+// Implementamos la renderización de listas: 
+function renderLista() {
+  const ul = document.getElementById('listaAmigos');  // Acá obtenemos el <ul>
+  ul.innerHTML = '';  //Acá limpiamos la lista actual
+
+  for (const nombre of amigos) {     // usa SIEMPRE el MISMO nombre de variable
+    const li = document.createElement('li');
+    li.textContent = nombre;         // y aquí el MISMO identificador
+    ul.appendChild(li);
+  }
+}
+amigos.push(nombre);
+renderLista();  // refrescamos la UI
