@@ -44,3 +44,25 @@ function renderLista() {
 }
 amigos.push(nombre);
 renderLista();  // refrescamos la UI
+//Comenzamos acá con el sorteo: 
+function sortearAmigo() {
+  //Debemos validar que haya amigos, evitamos un sorteo vacío.
+  if (amigos.length === 0) {                                    //devuelve un número en [0,1).
+    alert('No hay nombres para sortear. Agrega al menos uno.');
+    return;
+  }
+
+  //Generamos un índice aleatorio [0, amigos.length)
+  const indice = Math.floor(Math.random() * amigos.length);
+
+  // Obtenemos el nombre sorteado
+  const elegido = amigos[indice];
+
+  // Mostramos el resultado en el <ul id="resultado">
+  const ulResultado = document.getElementById('resultado');
+  ulResultado.innerHTML = '';                 // limpiamos el resultado anterior
+  const li = document.createElement('li');    // creamos un <li> nuevo
+  li.textContent = elegido;                   // colocamos el nombre sorteado
+  ulResultado.appendChild(li);                // agregamos al <ul>
+}
+
