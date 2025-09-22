@@ -63,10 +63,6 @@ Permite **agregar nombres**, **validar entradas**, **visualizar la lista** y **s
 
 ---
 
-## Detalles de Implementación
 
-### Estado
-```js
-const amigos = []; // fuente de verdad de la app
 
 
